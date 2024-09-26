@@ -1,0 +1,40 @@
+// _mixins.scss
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin background-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  @mixin button-styles($bg-color, $text-color) {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: $bg-color;
+    color: $text-color;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  $breakpoints: (
+    'small': 480px,
+    'medium': 768px,
+    'large': 1024px
+  );
+  
+  @mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  }

@@ -1,0 +1,137 @@
+// _forms.scss
+label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  .contact-page {
+    background-image: $background-image;
+    @include background-cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+  }
+  
+  .contact-main {
+    @include flex-center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .contact-container {
+    background-color: #ffffff09;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+    h1 {
+      color: #fbfbfb;
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+  
+  .contact-form {
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    label {
+      display: block;
+      color: #fafafa;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-size: 14px;
+  
+      &::placeholder {
+        color: #999;
+      }
+    }
+  
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+  }
+  
+  .gender-options {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f5f523;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .gender-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  
+    input[type="radio"] {
+      display: none;
+    }
+  
+    .radio-custom {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      margin-right: 8px;
+      display: inline-block;
+      position: relative;
+  
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: $secondary-color;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.2s ease;
+      }
+    }
+  
+    input[type="radio"]:checked + .radio-custom::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  .btn-register {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(to right, #5c9ce6, $secondary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  
+    &:hover {
+      opacity: 0.9;
+    }
+  }

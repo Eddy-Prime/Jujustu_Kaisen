@@ -1,0 +1,183 @@
+// _responsive.scss
+@include respond-to('medium') {
+    body {
+      min-width: auto;
+    }
+  
+    header {
+      padding: 10px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+  
+      .logo img {
+        width: 120px;
+        height: auto;
+        margin-right: 20px;
+      }
+  
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-right: 0;
+  
+        li {
+          width: 100%;
+          text-align: center;
+          padding: 4px;
+        }
+      }
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+  
+      &.active {
+        display: block;
+      }
+    }
+  
+    main #subContWrap {
+      padding: 45px;
+    }
+  
+    .container {
+      flex-direction: column;
+  
+      .text, .image {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  
+    .content img {
+      width: 150px;
+    }
+  
+    .contact-container {
+      padding: 20px;
+    }
+  
+    .gender-options {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .gender-option {
+      margin-bottom: 10px;
+    }
+  
+    .radio-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .form-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .btn-submit,
+    .btn-reset {
+      width: 100%;
+    }
+  }
+  
+  @include respond-to('small') {
+    .normalList.epList {
+      grid-template-columns: 1fr;
+    }
+  
+    .epThumbWrap {
+      max-width: 280px;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+  
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .character-info {
+      max-width: 600px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .character-card {
+      flex-direction: row;
+      text-align: left;
+      align-items: flex-start;
+  
+      img {
+        max-width: 300px;
+        margin-right: 30px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .character-card {
+      img {
+        max-width: 200px;
+      }
+    }
+  }
+  // Episode list
+  .normalList.epList {
+    @include respond-to(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include respond-to(small) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Forms
+  .contact-form {
+    @include respond-to(small) {
+      .gender-options {
+        flex-direction: column;
+      }
+      
+      .btn-register {
+        font-size: 1rem;
+        padding: 0.8rem;
+      }
+    }
+  }
+
+  // Footer
+  footer {
+    @include respond-to(small) {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  }
